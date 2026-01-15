@@ -39,6 +39,7 @@
 
 .navbar-logo-text {
   @apply text-xl font-extrabold transition-all duration-300 text-white;
+  @apply hidden md:block;
 }
 
 .navbar-toggle {
