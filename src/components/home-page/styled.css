@@ -1,0 +1,63 @@
+.hero-section {
+  @apply py-20 md:py-32;
+}
+
+.hero-content {
+  @apply container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12;
+}
+
+.hero-text {
+  @apply flex-1 text-center md:text-left;
+}
+
+.hero-title {
+  @apply text-5xl md:text-6xl font-bold text-secondary mb-4;
+}
+
+.hero-tagline {
+  @apply text-xl md:text-2xl text-secondary-light mb-8 max-w-xl;
+}
+
+.hero-cta {
+  @apply flex flex-col sm:flex-row gap-4 justify-center md:justify-start;
+}
+
+.hero-image {
+  @apply flex-1 flex items-center justify-center;
+}
+
+.image-placeholder {
+  @apply w-64 h-64 bg-white rounded-full flex items-center justify-center shadow-xl;
+}
+
+.features-grid {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-8;
+}
+
+.feature-card {
+  @apply text-center p-6;
+}
+
+.feature-icon {
+  @apply text-5xl mb-4;
+}
+
+.feature-title {
+  @apply text-2xl font-bold text-secondary mb-2;
+}
+
+.feature-description {
+  @apply text-gray-600;
+}
+
+.cta-section {
+  @apply text-center max-w-2xl mx-auto;
+}
+
+.cta-title {
+  @apply text-3xl md:text-4xl font-bold text-secondary mb-4 px-4;
+}
+
+.cta-text {
+  @apply text-lg md:text-xl text-gray-600 mb-8 px-4;
+}

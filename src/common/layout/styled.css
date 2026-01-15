@@ -1,0 +1,7 @@
+.page-layout {
+  @apply min-h-screen flex flex-col bg-dark-bg;
+}
+
+.page-main {
+  @apply flex-1 flex flex-col bg-dark-bg;
+}

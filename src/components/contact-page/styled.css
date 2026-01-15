@@ -1,0 +1,167 @@
+.contact-header {
+  @apply pt-32 pb-12 md:pt-36 md:pb-16 text-center px-4 bg-dark-bg overflow-visible;
+}
+
+.contact-header-title {
+  @apply text-3xl md:text-5xl font-black mb-6 text-gradient-neon;
+  overflow: visible;
+  line-height: 1.3 !important;
+}
+
+.contact-header-subtitle {
+  @apply text-lg md:text-xl text-gray-400 px-4;
+}
+
+.contact-content {
+  @apply max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 px-4 bg-dark-bg pb-16;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .contact-content {
+    align-items: stretch;
+  }
+}
+
+.contact-info-section {
+  @apply h-full;
+}
+
+.info-card {
+  @apply glass p-4 md:p-8 rounded-neon h-full;
+}
+
+.schedule-section {
+  @apply glass p-4 md:p-8 rounded-neon;
+  grid-column: 1 / -1;
+}
+
+.info-card-title {
+  @apply text-xl md:text-2xl font-black text-white mb-4 md:mb-6;
+}
+
+.info-items {
+  @apply space-y-8;
+}
+
+.info-item {
+  @apply flex items-start gap-4;
+}
+
+.info-icon {
+  @apply text-3xl;
+  filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.5));
+}
+
+.info-label {
+  @apply text-sm text-gray-500 mb-1;
+}
+
+.info-value {
+  @apply text-lg md:text-xl text-white font-medium hover:text-neon-cyan transition-colors;
+}
+
+.social-links {
+  @apply flex flex-col gap-2;
+}
+
+.social-link {
+  @apply text-white hover:text-neon-pink transition-all transform hover:scale-110;
+}
+
+.social-link:hover {
+  text-shadow: 0 0 8px rgba(255, 0, 255, 0.6);
+}
+
+.schedule-list {
+  @apply space-y-3;
+}
+
+@media (min-width: 1024px) {
+  .schedule-list {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  .schedule-list > * + * {
+    margin-top: 0;
+  }
+}
+
+.schedule-item {
+  @apply flex flex-col pb-3 last:border-0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 1024px) {
+  .schedule-item {
+    @apply p-5 rounded-lg text-center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.2s ease;
+  }
+
+  .schedule-item:hover {
+    background: rgba(0, 240, 255, 0.05);
+    border-color: rgba(0, 240, 255, 0.2);
+  }
+}
+
+.schedule-day {
+  @apply font-bold text-white;
+}
+
+@media (min-width: 1024px) {
+  .schedule-day {
+    @apply text-neon-cyan text-base font-bold mb-1;
+  }
+}
+
+.schedule-hours {
+  @apply text-gray-400;
+}
+
+@media (min-width: 1024px) {
+  .schedule-hours {
+    @apply text-white text-sm;
+  }
+}
+
+.schedule-location {
+  @apply text-sm text-neon-lime;
+}
+
+@media (min-width: 1024px) {
+  .schedule-location {
+    @apply text-sm mt-2;
+  }
+}
+
+.contact-form-section {
+  @apply hidden md:block glass p-4 md:p-8 rounded-neon h-full;
+}
+
+.form-title {
+  @apply text-xl md:text-2xl font-black text-white mb-4 md:mb-6;
+}
+
+.contact-form {
+  @apply space-y-6;
+}
+
+.form-group {
+  @apply flex flex-col;
+}
+
+.form-label {
+  @apply text-sm font-semibold text-gray-300 mb-2;
+}
+
+.form-input {
+  @apply px-4 py-3 bg-dark-card border-2 border-gray-700 rounded-neon text-white focus:outline-none focus:ring-2 focus:ring-neon-cyan focus:border-neon-cyan transition-all;
+}
+
+.form-input:focus {
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}

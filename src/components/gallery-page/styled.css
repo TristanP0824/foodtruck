@@ -1,0 +1,131 @@
+.gallery-header {
+  @apply pt-32 pb-12 md:pt-36 md:pb-16 text-center px-4 bg-dark-bg overflow-visible;
+}
+
+.gallery-header-title {
+  @apply text-3xl md:text-5xl font-black mb-6 text-gradient-neon;
+  overflow: visible;
+  line-height: 1.3 !important;
+}
+
+.gallery-header-subtitle {
+  @apply text-lg md:text-xl text-gray-400 px-4;
+}
+
+.gallery-content {
+  @apply max-w-7xl mx-auto px-4 space-y-12 bg-dark-bg pb-16;
+}
+
+/* Instagram CTA Section */
+.instagram-cta {
+  @apply text-center space-y-4 pb-8;
+  border-bottom: 2px solid transparent;
+  background-image: linear-gradient(#0a0a0a, #0a0a0a),
+    linear-gradient(90deg, #00f0ff, #ff00ff);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.instagram-cta-title {
+  @apply text-2xl md:text-3xl font-black text-white;
+}
+
+.instagram-cta-subtitle {
+  @apply text-base md:text-lg text-gray-400 max-w-2xl mx-auto;
+}
+
+.instagram-button {
+  @apply inline-flex items-center gap-2 px-6 py-3 bg-gradient-neon text-white font-bold rounded-neon-lg transition-all shadow-glow-neon hover:shadow-glow-neon-lg hover:scale-105;
+}
+
+/* Masonry Grid Layout */
+.masonry-grid {
+  @apply grid gap-4 md:gap-6;
+
+  /* Mobile: 1 column */
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: 200px;
+
+  /* Tablet: 2 columns */
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 180px;
+  }
+
+  /* Desktop: 3 columns */
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 160px;
+  }
+}
+
+/* Masonry Items with varying heights */
+.masonry-item {
+  @apply glass rounded-neon overflow-hidden transition-all cursor-pointer;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid transparent;
+}
+
+.masonry-item:hover {
+  border: 2px solid rgba(255, 0, 255, 0.5);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.4), 0 0 30px rgba(255, 0, 255, 0.3);
+}
+
+/* Different heights for masonry effect */
+.masonry-item.short {
+  grid-row: span 1;
+}
+
+.masonry-item.medium {
+  grid-row: span 2;
+}
+
+.masonry-item.tall {
+  grid-row: span 3;
+}
+
+/* Responsive height adjustments for mobile */
+@media (max-width: 639px) {
+  .masonry-item.short {
+    grid-row: span 2;
+  }
+
+  .masonry-item.medium {
+    grid-row: span 3;
+  }
+
+  .masonry-item.tall {
+    grid-row: span 4;
+  }
+}
+
+.masonry-item-image {
+  @apply flex-grow bg-gradient-to-br from-dark-card to-dark-bg flex items-center justify-center relative overflow-hidden;
+}
+
+.placeholder-content {
+  @apply flex flex-col items-center justify-center gap-2 p-4;
+}
+
+.placeholder-text {
+  @apply text-white font-semibold text-sm md:text-base;
+}
+
+.masonry-item-caption {
+  @apply p-3 md:p-4 bg-dark-card;
+}
+
+.masonry-item-caption p {
+  @apply text-gray-300 text-sm md:text-base line-clamp-2;
+}
+
+/* Hover effects */
+.masonry-item:hover .masonry-item-image {
+  @apply scale-105;
+  transition: transform 0.3s ease;
+}
+
+.masonry-item-image {
+  transition: transform 0.3s ease;
+}

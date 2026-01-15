@@ -1,0 +1,230 @@
+.navbar {
+  @apply fixed top-0 left-0 right-0 z-50 transition-all duration-300;
+}
+
+.navbar.transparent {
+  @apply bg-transparent;
+}
+
+.navbar.scrolled {
+  @apply glass shadow-glow-neon;
+  border-bottom: 2px solid transparent;
+  background-image: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.9)),
+    linear-gradient(90deg, #00f0ff, #ff00ff);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.navbar-container {
+  @apply container mx-auto px-4 sm:px-6 lg:px-8 py-4 relative;
+  @apply flex flex-col items-center justify-center gap-4;
+  @apply md:flex-row md:items-center md:justify-center md:gap-12;
+}
+
+.navbar-brand {
+  @apply flex items-center justify-center;
+}
+
+.navbar-logo-wrapper {
+  @apply flex flex-col items-center gap-2 transition-colors duration-300;
+}
+
+.navbar-icon {
+  @apply transition-all duration-300 text-neon-cyan;
+}
+
+.navbar.scrolled .navbar-icon {
+  filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.6));
+}
+
+.navbar-logo-text {
+  @apply text-xl font-extrabold transition-all duration-300 text-white;
+}
+
+.navbar-toggle {
+  @apply md:hidden absolute right-4 top-4 flex flex-col justify-center items-center w-10 h-10 focus:outline-none;
+}
+
+.hamburger {
+  @apply block w-6 h-0.5 relative transition-all duration-300;
+  background-color: #00f0ff;
+}
+
+.hamburger.scrolled {
+  background-color: #00f0ff;
+}
+
+.hamburger::before,
+.hamburger::after {
+  @apply content-[''] absolute w-6 h-0.5 transition-all duration-300;
+  background-color: #00f0ff;
+}
+
+.hamburger.scrolled::before,
+.hamburger.scrolled::after {
+  background-color: #00f0ff;
+}
+
+.hamburger::before {
+  transform: translateY(-8px);
+}
+
+.hamburger::after {
+  transform: translateY(8px);
+}
+
+.hamburger.open {
+  @apply bg-transparent;
+}
+
+.hamburger.open::before {
+  transform: rotate(45deg);
+}
+
+.hamburger.open::after {
+  transform: rotate(-45deg);
+}
+
+.navbar-menu {
+  /* Desktop: Always visible, horizontal layout */
+  @apply hidden md:flex flex-row gap-8 items-center;
+}
+
+.navbar-menu-left,
+.navbar-menu-right {
+  @apply hidden md:flex flex-row gap-8 items-center;
+}
+
+.navbar-item {
+  @apply list-none;
+}
+
+.navbar-link {
+  @apply font-semibold text-base transition-all duration-300;
+  @apply text-white hover:text-neon-cyan;
+}
+
+.navbar-link:hover {
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
+}
+
+.navbar.scrolled .navbar-link {
+  @apply text-white hover:text-neon-pink;
+}
+
+.navbar.scrolled .navbar-link:hover {
+  text-shadow: 0 0 8px rgba(255, 0, 255, 0.6);
+}
+
+/* ===== Side Drawer Styles ===== */
+
+/* Backdrop overlay */
+.drawer-backdrop {
+  @apply md:hidden;
+  @apply fixed inset-0 z-40;
+  @apply opacity-0 pointer-events-none;
+  @apply transition-opacity duration-300;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  touch-action: none;
+  overscroll-behavior: contain;
+}
+
+.drawer-backdrop.active {
+  @apply opacity-100 pointer-events-auto;
+}
+
+/* Side drawer container */
+.drawer {
+  @apply md:hidden;
+  @apply fixed top-0 right-0 z-50;
+  @apply h-screen;
+  @apply flex flex-col;
+  @apply transition-transform duration-300 ease-out;
+  width: 85%;
+  max-width: 320px;
+  transform: translateX(100%);
+  background-color: rgba(10, 10, 10, 0.98);
+  box-shadow: -4px 0 15px rgba(0, 0, 0, 0.5);
+  border-left: 3px solid transparent;
+  background-image:
+    linear-gradient(rgba(10, 10, 10, 0.98), rgba(10, 10, 10, 0.98)),
+    linear-gradient(180deg, #00f0ff, #ff00ff);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  overscroll-behavior: contain;
+}
+
+.drawer.active {
+  transform: translateX(0);
+}
+
+/* Drawer header with brand */
+.drawer-header {
+  @apply flex items-center gap-3 p-6;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.drawer-icon {
+  @apply text-neon-cyan;
+  filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.6));
+}
+
+.drawer-brand {
+  @apply text-xl font-extrabold text-white;
+}
+
+/* Navigation links container */
+.drawer-nav {
+  @apply flex flex-col py-4;
+}
+
+/* Individual drawer links */
+.drawer-link {
+  @apply relative block px-6 py-4 text-lg font-semibold;
+  @apply text-white;
+  @apply transition-all duration-300;
+  @apply opacity-0;
+  transform: translateX(20px);
+}
+
+.drawer.active .drawer-link {
+  @apply opacity-100;
+  transform: translateX(0);
+  animation: slideInLink 0.3s ease-out forwards;
+}
+
+@keyframes slideInLink {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Hover state for drawer links */
+.drawer-link:hover {
+  @apply text-neon-cyan;
+  background: linear-gradient(90deg, rgba(0, 240, 255, 0.1), transparent);
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
+}
+
+/* Active page indicator */
+.drawer-link.active {
+  @apply text-neon-cyan;
+  background: linear-gradient(90deg, rgba(0, 240, 255, 0.15), transparent);
+  border-left: 3px solid;
+  border-image: linear-gradient(180deg, #00f0ff, #ff00ff) 1;
+  padding-left: 21px;
+}
+
+.drawer-link.active::after {
+  content: '';
+  @apply absolute bottom-0 left-6 right-6;
+  height: 2px;
+  background: linear-gradient(90deg, #00f0ff, #ff00ff);
+}

@@ -1,0 +1,64 @@
+.menu-header {
+  @apply pt-32 pb-12 md:pt-36 md:pb-16 text-center px-4 bg-dark-bg overflow-visible;
+}
+
+.menu-header-title {
+  @apply text-3xl md:text-5xl font-black mb-6 text-gradient-neon;
+  overflow: visible;
+  line-height: 1.3 !important;
+}
+
+.menu-header-subtitle {
+  @apply text-lg md:text-xl text-gray-400 max-w-2xl mx-auto px-4;
+}
+
+.menu-content {
+  @apply max-w-4xl mx-auto space-y-8 md:space-y-12 px-4 bg-dark-bg pb-16;
+}
+
+.menu-category {
+  @apply space-y-4 md:space-y-6;
+}
+
+.category-title {
+  @apply text-2xl md:text-3xl font-black text-white pb-2 mb-4 md:mb-6;
+  border-bottom: 4px solid transparent;
+  background-image: linear-gradient(#0a0a0a, #0a0a0a),
+    linear-gradient(90deg, #00f0ff, #ff00ff);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.menu-items {
+  @apply space-y-4 md:space-y-6;
+}
+
+.menu-item {
+  @apply glass p-4 md:p-6 rounded-neon hover:scale-105 transition-all duration-300;
+  border: 2px solid transparent;
+}
+
+.menu-item:hover {
+  border: 2px solid rgba(0, 240, 255, 0.5);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.4), 0 0 20px rgba(255, 0, 255, 0.3);
+}
+
+.menu-item-header {
+  @apply flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-2;
+}
+
+.menu-item-name {
+  @apply text-lg md:text-xl font-bold text-white flex items-center gap-2;
+}
+
+.special-badge {
+  @apply text-xs bg-gradient-neon text-white px-2 py-1 rounded-full font-bold shadow-glow-neon;
+}
+
+.menu-item-price {
+  @apply text-lg md:text-xl font-bold text-neon-pink;
+}
+
+.menu-item-description {
+  @apply text-gray-400;
+}
